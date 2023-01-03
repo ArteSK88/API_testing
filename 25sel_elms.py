@@ -5,7 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-# pytest -v --driver Chrome --driver-path C:/Users/Artesk/chromedriver_win32/chromedriver.exe 25sel_elms.py
+# pytest -v --driver Chrome --driver-path chromedriver 25sel_elms.py
 
 
 @pytest.fixture(autouse=True)
@@ -14,7 +14,7 @@ def open_page_precondition():
     # Переходим на страницу авторизации
     pytest.driver.get('http://petfriends.skillfactory.ru/login')
     # Вводим email
-    pytest.driver.find_element(By.ID, 'email').send_keys('kalistratov.arte@mail.ru')
+    pytest.driver.find_element(By.ID, 'email').send_keys('test@mail.ru')
     # Вводим пароль
     pytest.driver.find_element(By.ID, 'pass').send_keys('123')
     # Нажимаем на кнопку входа в аккаунт
